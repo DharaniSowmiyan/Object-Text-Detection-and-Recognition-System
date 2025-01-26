@@ -5,7 +5,10 @@ import keras_ocr
 import numpy as np
 import matplotlib.pyplot as plt
 from ultralytics import YOLO
-pipeline = keras_ocr.pipeline.Pipeline()
+recognizer = keras_ocr.recognition.Recognizer()
+recognizer.compile() 
+detector = keras_ocr.detection.Detector()
+pipeline = keras_ocr.pipeline.Pipeline(detector=detector, recognizer=recognizer)
 model = YOLO(r"runs\detect\train\weights\best.pt")
 
 st.write("Upload an image file from your computer")
