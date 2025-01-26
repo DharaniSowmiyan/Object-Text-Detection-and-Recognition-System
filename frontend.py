@@ -32,9 +32,9 @@ if uploaded_file is not None:
         for result in results:
             result.save(filename="result.jpg")  
         annotated_image = Image.open("result.jpg")
-        st.image(annotated_image, caption="YOLOv8 Object Detections with bounding box", use_container_width=True)
+        st.image(annotated_image, caption="YOLOv8 Object Detections with bounding box", use_column_width=True)
         ax_yolo.imshow(annotated_image)
     else:
-        st.image(image, caption="No objects detected, displaying original image.", use_container_width=True)
+        st.image(image, caption="No objects detected, displaying original image.", use_column_width=True)
         ax_yolo.imshow(image)  
 
